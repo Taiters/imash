@@ -12,7 +12,7 @@ module Imash
 					data[y] << (prng.rand > 0.5)
 				}
 			}
-			pp data
+
 			if false
 
 			else
@@ -22,8 +22,7 @@ module Imash
 					row.push(*rev)
 				}
 			end
-			pp hash_data.fg
-			pp hash_data.bg
+			
 			fg = ChunkyPNG::Color.from_hsl(*hash_data.fg)
 			bg = ChunkyPNG::Color.from_hsl(*hash_data.bg)
 

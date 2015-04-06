@@ -3,7 +3,6 @@ require "imash/hash_data"
 require "imash/generator"
 require "chunky_png"
 require "digest"
-require "pp"
 
 class SizeDivisionException < StandardError
 end
