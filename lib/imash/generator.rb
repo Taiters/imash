@@ -11,18 +11,15 @@ module Imash
 				(0...(divisions.to_f/2.0).round).each { |x|
 					data[y] << (prng.rand > 0.5)
 				}
+				rev = data[y].reverse
+				rev.shift if divisions % 2 != 0
+				data[y].push(*rev)
 			}
 
-			if false
-
-			else
-				data.map! {|row|
-					rev = row.reverse
-					rev.shift if divisions % 2 != 0
-					row.push(*rev)
-				}
+			if hash_data.mirror_y
+				data = data.transpose
 			end
-			
+
 			fg = ChunkyPNG::Color.from_hsl(*hash_data.fg)
 			bg = ChunkyPNG::Color.from_hsl(*hash_data.bg)
 
