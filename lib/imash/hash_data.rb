@@ -1,7 +1,7 @@
 module Imash
 	class HashData
 
-		attr_reader :seed, :bg, :fg, :mirror_y
+		attr_reader :seed, :bg, :fg
 
 		def initialize(hash)
 
@@ -15,7 +15,6 @@ module Imash
 			@seed = bytes.shift(8).each_with_index.inject(0) { |a, b| 
 				a | ((b[0] & 0xFF) << b[1]*8) 
 			}
-			@mirror_y = (bytes.shift.to_f / 255.0) > 0.25
 
 		end
 

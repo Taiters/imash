@@ -16,10 +16,6 @@ module Imash
 				data[y].push(*rev)
 			}
 
-			if hash_data.mirror_y
-				data = data.transpose
-			end
-
 			fg = ChunkyPNG::Color.from_hsl(*hash_data.fg)
 			bg = ChunkyPNG::Color.from_hsl(*hash_data.bg)
 
