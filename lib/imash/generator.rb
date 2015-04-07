@@ -21,12 +21,12 @@ module Imash
 
 			img = ChunkyPNG::Image.new(size,size,bg)
 
-			s = size/divisions
+			s = size/(divisions+2)
 			data.each_with_index { |row, y| 
 				row.each_with_index { |val, x|
 
-					x1 = x*s
-					y1 = y*s
+					x1 = x*s+s
+					y1 = y*s+s
 					x2 = x1+s
 					y2 = y1+s
 
